@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+        }
+
+        body {
+            background-color: #111;
+
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4vh 10vw;
+            background-color: #2aa4bf;
+            position: fixed;
+            z-index: 9999;
+        }
+
+        nav h1 {
+            text-transform: capitalize;
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        /* .title{
+            width:auto;
+            border:2px solid red;
+            height:35px;
+            overflow: hidden;
+
+        } */
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        ul h4 {
+            font-size: 21px;
+            text-transform: capitalize;
+            font-family: monospace;
+            font-weight: 400;
+        }
+
+        .main {
+            width: 100%;
+            padding-top: 15vh;
+        }
+
+        #page1 {
+            width: 100%;
+            height: 85vh;
+            padding: 0 5vw;
+            color: white;
+            margin: 5vh 0;
+            overflow-x: hidden;
+        }
+
+        .section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 5vh 0;
+            align-items: center;
+        }
+
+        .section-left {
+            width: 50%;
+            padding: 5vh 3vw;
+
+        }
+
+        .section-left h1 {
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: 500;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-bottom: 4vh;
+
+        }
+
+        .section-left p {
+            text-transform: capitalize;
+            font-size: 14px;
+            font-weight: 200;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 90%;
+            margin-bottom: 4vh;
+
+        }
+
+        .section-left button {
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 10px;
+            padding: 16px 35px;
+            font-size: 23px;
+
+        }
+
+        .section-right {
+            width: 50%;
+
+
+        }
+
+        .section-right img {
+            width: 100%;
+            aspect-ratio: 5/3;
+        }
+
+        .logo {
+            width: 100%;
+            /* border:2px solid red; */
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .logo img {
+            height: 50px;
+            aspect-ratio: 5/1.7;
+            /* border:2px solid rgb(51, 255, 0); */
+            /* background-color: white; */
+        }
+
+        #page2 {
+            width: 100%;
+            height: 100vh;
+            color: white;
+            /* border: 2px solid red; */
+            overflow-x: hidden;
+        }
+
+        .services {
+            padding: 5vh 4vw;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+
+        }
+
+        .services h1 {
+            font-size: 8vh;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .services p {
+            font-size: 17px;
+            padding-top: 30px;
+            font-weight: 100;
+            overflow: hidden;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .image-animation {
+            margin: 20vh 0;
+            display: flex;
+            /* transition:all 0.2s; */
+            /* overflow-x: scroll; */
+
+        }
+
+        .marquee {
+            display: flex;
+            flex-shrink: 0;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #3ea5fd;
+            transform: translate(-280%);
+            gap: 20px;
+        }
+
+        .marquee h1 {
+            font-size: 25px;
+        }
+
+        .marquee img {
+            width: 90px;
+            /* transform: rotate(180deg); */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #page3 {
+            width: 100%;
+            min-height: 100vh;
+            /* border: 2px solid blue */
+        }
+
+        #page3 section {
+            display: grid;
+            justify-content: center;
+            /* align-items: center; */
+            grid-template-columns: repeat(2, 40%);
+            grid-template-rows: repeat(3, 150px);
+            gap: 50px 50px;
+        }
+
+        .card {
+            background-color: #fff;
+            width: 415px;
+            border-radius: 20px;
+            height: 151px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-family: cursive;
+            font-weight: 400;
+            text-transform: capitalize;
+            box-shadow: 3px 4px 1px 0px white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <!-- <div class="title"> -->
+        <h1> title</h1>
+        <!-- </div> -->
+        <ul>
+            <h4>Home</h4>
+            <h4>about</h4>
+            <h4>items</h4>
+            <h4>product</h4>
+        </ul>
+    </nav>
+    <div class="main">
+        <div id="page1">
+            <div class="section">
+                <div class="section-left">
+                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, voluptatum.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, totam! Voluptatum
+                        consectetur
+                        dignissimos quisquam sunt, maxime cupiditate ipsam facilis assumenda praesentium aliquid iusto
+                        aut
+                        perspiciatis reiciendis ullam nobis vitae atque!</p>
+                    <button>hover me</button>
+                </div>
+                <div class="section-right">
+                    <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="computer image">
+                </div>
+            </div>
+            <div class="logo">
+                <img src="https://pngimg.com/uploads/amazon/amazon_PNG13.png" alt="">
+                <img src="https://th.bing.com/th/id/R.af1de3f2ed4972e46ab0e68dd9ab3ba8?rik=REx4C5jQDkv6bA&riu=http%3a%2f%2fassets.stickpng.com%2fimages%2f610673352ced4d0004ead4e5.png&ehk=9dETXKdo%2fRMEm1R2WhNn%2f9T0tPpXFDB5xYeCgTFpG2w%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <img src="https://th.bing.com/th/id/R.32f5d5631ef2b324675bf1ddd9da01ec?rik=%2flzihxgwCqPKsg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fmicrosoft-png-microsoft-logo-png-1870.png&ehk=8ZpTsqKlebuaMlsUzbM1I2Q3KsF8PoXOYQUiLtqYyEQ%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <img src="https://freelogopng.com/images/all_img/1681142315open-ai-logo.png" alt="">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/100/699/non_2x/meta-logo-transparent-free-png.png"
+                    alt="">
+                <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/canva_logo_icon_168459.png" alt="">
+            </div>
+        </div>
+        <div id="page2">
+            <div class="services">
+                <h1>Services</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, nihil.</p>
+            </div>
+            <div class="image-animation">
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                <div class="marquee">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <img src="https://icon-library.com/images/arrow-icon-png-transparent/arrow-icon-png-transparent-4.jpg"
+                        alt="">
+                </div>
+                
+            </div>
+        </div>
+        <div id="page3">
+            <section>
+                <div class="card line1 left a">card1</div>
+                <div class="card line1 right">card2</div>
+                <div class="card line2 left">card3</div>
+                <div class="card line2 right">card4</div>
+                <div class="card line3 left">card5</div>
+                <div class="card line3 right">card6</div>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+
+        function page1animation() {
+            let tl = gsap.timeline();
+            tl.from("nav h1,ul h4", {
+                y: -30,
+                opacity: 0,
+                // delay:1,
+                duration: 0.7,
+                stagger: 0.15,
+            })
+            tl.from("#page1 .section .section-left h1", {
+                x: -300,
+                opacity: 0,
+                // delay:1,
+                duration: 0.7,
+                stagger: 0.15,
+
+            })
+            tl.from("#page1 .section .section-left p", {
+                x: -200,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.65,
+            })
+            tl.from("#page1 .section .section-left button", {
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.15,
+            })
+            tl.from("#page1 .section .section-right img", {
+                x: 100,
+                opacity: 0,
+                duration: 0.4,
+                stagger: 0.1,
+            }, "-=0.15")
+            tl.from("#page1 .logo img", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: -0.099,
+            })
+
+        }
+        page1animation()
+        function page2animation() {
+            let tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".services h1",
+                    scroller: "body",
+                    // markers: true,
+                    start: "top 80%",
+                    scrub: 1,
+                    end: "bottom 30%",
+                    stagger:0.15
+                }
+            })
+            tl2.from(".services h1", {
+                opacity: 0,
+                x: -100,
+                duration: 1,
+            })
+            tl2.from(".services p", {
+                x: 200,
+                opacity: 0,
+                duration: 1,
+                delay: 0,
+
+            })
+            window.addEventListener("wheel", function (val) {
+                // console.log(val.deltaY)
+                if (val.deltaY > 0) {
+                    gsap.to(".image-animation", {
+                        // delay:1,
+                        duration: 7,
+                        transform: "translateX(100%)",
+                        repeat: -1,
+                        ease: "none",
+                    })
+                    gsap.to(".marquee img", {
+                        // rotate:"180deg",
+                        transform: "rotatey(180deg)",
+                        duration: 1,
+
+                    })
+                }
+                else {
+                    gsap.to(".image-animation", {
+                        // delay:1,
+                        duration: 7,
+                        transform: "translateX(0%)",
+                        repeat: -1,
+                        ease: "none",
+                    })
+                    gsap.to(".marquee img", {
+                        // rotate:"180deg",
+                        transform: "rotatey(0deg)",
+                        duration: 1,
+
+                    })
+                }
+            })
+        }
+        page2animation()
+        function page3animation() {
+            let tl3 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "section .line1",
+                    scroller: "body",
+                    start: "top 85%",
+                    end: "bottom 25%",
+                    // markers:true,
+                    scrub: 1,
+                    stager: 0.15
+                }
+            })
+            tl3.from("#page3 section .line1.left", {
+                x: -200,
+                opacity: 0,
+            })
+            tl3.from("#page3 section .line1.right", {
+                x: 200,
+                opacity: 0,
+            })
+            tl3.from("#page3 section .line2.left", {
+                x: -200,
+                opacity: 0,
+            })
+            tl3.from("#page3 section .line2.right", {
+                x: 200,
+                opacity: 0,
+            })
+            tl3.from("#page3 section .line3.left", {
+                x: -200,
+                opacity: 0,
+            })
+            tl3.from("#page3 section .line3.right", {
+                x: 200,
+                opacity: 0,
+            })
+        }
+        page3animation()
+    </script>
+</body>
+
+</html>
